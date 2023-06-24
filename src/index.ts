@@ -1,6 +1,7 @@
 import express, { Request, Response, Express } from 'express';
 import dotenv from 'dotenv';
-import { Product } from './types/types';
+import { Path, Product } from './types/types';
+import { calculatePath } from './services/calculate.path.service';
 
 
 dotenv.config()
@@ -36,7 +37,11 @@ app.get('/', async (req: Request, res: Response) => {
         z: 0,
     } 
 
-    console.log(products)
+    let order: Path = {
+        pickingOrder: [],
+        distance: 0
+    }
+
 
     res.send({"Products": ['hi', 'me'], "distance": 0})
 })

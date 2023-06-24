@@ -10,6 +10,7 @@ export function calculatePath(start: Product, path: Path, products: Product[]){
 
     // if products field is empty => return path
     if (products.length === 0){
+        path.distance = Number(path.distance.toFixed(2))
         return path
     }
 

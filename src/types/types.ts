@@ -11,3 +11,13 @@ export interface Order {
     products: Product[]
 }
 
+export interface ProductPath {
+    productId: string,
+    positionId: string
+}
+
+export interface Path {
+    pickingOrder: ProductPath[],
+    distance: number
+}
+

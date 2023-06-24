@@ -27,6 +27,15 @@ app.get('/', async (req: Request, res: Response) => {
         products.push(...data)
     }
 
+    const start: Product = {
+        positionId: "position0",
+        productId: "product-0",
+        quantity: 0,
+        x: 0,
+        y: 0,
+        z: 0,
+    } 
+
     console.log(products)
 
     res.send({"Products": ['hi', 'me'], "distance": 0})

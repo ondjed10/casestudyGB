@@ -11,7 +11,9 @@ const port = process.env.PORT
 
 app.get('/', async (req: Request, res: Response) => {
 
-    let productIds = ['product-1', 'product-2']
+    let productIds = ['product-1', 'product-2'] // for testing purposes
+
+    let productIdsReal = req.body
 
     let products: Product[] = []
 
@@ -42,8 +44,10 @@ app.get('/', async (req: Request, res: Response) => {
         distance: 0
     }
 
+    let orderPath = calculatePath(start, order, products)
+    
 
-    res.send({"Products": ['hi', 'me'], "distance": 0})
+    res.send(orderPath)
 })
 
 app.listen(port, () => {

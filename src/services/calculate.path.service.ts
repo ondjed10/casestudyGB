@@ -1,7 +1,14 @@
 import { Path, Product } from "../types/types";
 
-
-export function calculatePath(start: Product, path: Path, products: Product[]){
+/**
+ * Fuction implements algorithm to find fastest way to pick up
+ * products included in a order
+ * @param {Product} start 
+ * @param {Path} path 
+ * @param {Product[]} products 
+ * @returns {Path}
+ */
+export function calculatePath(start: Product, path: Path, products: Product[]): Path{
 
     // if not on starting point filter products
     if (start.productId !== "start"){
@@ -14,6 +21,7 @@ export function calculatePath(start: Product, path: Path, products: Product[]){
         return path
     }
 
+    // before loop, 
     let closest: Product = null
     let distance = Number.MAX_SAFE_INTEGER
 
@@ -39,7 +47,14 @@ export function calculatePath(start: Product, path: Path, products: Product[]){
 
 }
 
-function calculateDistance(pointA: Product, pointB: Product){
+
+/**
+ * Function to calculate distance betwenn points in 3D space (in a straight line)
+ * @param {Product} pointA 
+ * @param {Product} pointB 
+ * @returns {number} 
+ */
+function calculateDistance(pointA: Product, pointB: Product): number{
 
     let xDist = pointA.x - pointB.x
     let yDist = pointA.y - pointB.y

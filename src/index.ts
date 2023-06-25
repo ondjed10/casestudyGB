@@ -1,6 +1,6 @@
 import express, { Request, Response, Express } from 'express';
 import dotenv from 'dotenv';
-import { Path, Product } from './types/types';
+import { Path, Product, StartingPositon } from './types/types';
 import { calculatePath } from './services/calculate.path.service';
 
 
@@ -13,7 +13,8 @@ app.get('/', async (req: Request, res: Response) => {
 
     let productIds = ['product-1', 'product-2'] // for testing purposes
 
-    let productIdsReal = req.body
+    let productIdsReal = req.body.order
+    let startingPosition: StartingPositon = req.body.startingPosition
 
     let products: Product[] = []
 
@@ -34,9 +35,9 @@ app.get('/', async (req: Request, res: Response) => {
         positionId: "position0",
         productId: "product-0",
         quantity: 0,
-        x: 0,
-        y: 0,
-        z: 0,
+        x: startingPosition.x,
+        y: startingPosition.y,
+        z: startingPosition.z,
     } 
 
     let order: Path = {
@@ -46,7 +47,6 @@ app.get('/', async (req: Request, res: Response) => {
 
     let orderPath = calculatePath(start, order, products)
     
-
     res.send(orderPath)
 })
 

@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
     positionId: string,
     x: number,
     y: number,
@@ -7,17 +7,22 @@ export interface Product {
     quantity: number
 }
 
-export interface Order {
+export type Order = {
     products: Product[]
 }
 
-export interface ProductPath {
+export type ProductPath = {
     productId: string,
     positionId: string
 }
 
-export interface Path {
+export type Path = {
     pickingOrder: ProductPath[],
     distance: number
 }
 
+export type StartingPositon = {
+    x: number,
+    y: number,
+    z: number
+}

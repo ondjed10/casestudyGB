@@ -23,6 +23,6 @@ def generateProducts(numOfProducts, numOfEntries, dimensionOfWarehouse, filename
     with open(filename, "w") as outfile:
         outfile.write(data)
 
-
-generateProducts(5,20,20,"./test/data/test1.json")
+# generate more test data by changing parameters of function
+generateProducts(50,1000,120,"./test/data/test3.json")
 

@@ -14,7 +14,7 @@ Output sent in response is object with two properties:
 - distance: how much units cart needs to travel to pick up the order
 
 ### Setup and run
-- pull this repository
+- clone this repository
 - npm install
 - npm run build
 - npm run dev

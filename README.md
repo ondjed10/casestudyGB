@@ -20,3 +20,7 @@ Output sent in response is object with two properties:
 - npm run dev
 - go to localhost:3000
 - done 👍
+
+### Testing
+All the testing was done internally on various datasets (see folder test/data)
+I ran into configuration problems with Jest framework.

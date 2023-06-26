@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import { Path, Product, StartingPositon } from './types/types';
 import { calculatePath } from './services/calculate.path.service';
 
-
 dotenv.config()
 
 const app: Express = express()

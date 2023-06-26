@@ -35,6 +35,7 @@ export function calculatePath(start: Product, path: Path, products: Product[]): 
 
     }
 
+    console.log(`going to product with coordinates ${closest.x}, ${closest.y}, ${closest.z} with distance ${distance}`)
     // add new point to path and increase distance
     path.pickingOrder.push({
         positionId: closest.positionId,
